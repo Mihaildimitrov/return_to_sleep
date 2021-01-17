@@ -68,5 +68,14 @@ class HomeController extends AbstractController
         return new JsonResponse(['response'=>'HTTP code: ' . $httpcode, 'error'=> null]);
       }
 
+      /**
+      * @Route("/api/test", name="testapi")
+      */
+      public function test()
+      {
+            return $this->json([
+                    'message' => 'test!',
+            ]);
+      }
 
 }
