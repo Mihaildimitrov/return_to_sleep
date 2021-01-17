@@ -196,3 +196,51 @@
   padding: 0.6rem;
   margin: 1rem auto;
 }
+
+@mixin table {
+
+  //   border: 2px solid#FBB03B;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+
+  th {
+    // border: 1px solid #FBB03B;
+    padding: 5px 2px;
+    color: #FBB03B;
+    background-color: #222222;
+  }
+
+
+  td {
+    text-align: center;
+    // border: 1px solid #FBB03B;
+    padding: 5px 2px;
+    color: #222222;
+
+    a {
+      text-decoration: none;
+    }
+
+    &.green {
+      color: #4CAF50;
+    }
+
+    &.red {
+      color: red;
+    }
+
+  }
+
+  tr {
+    &:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+
+
+}

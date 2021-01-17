@@ -1,1 +1,27 @@
-<p>alerts works!</p>
+<div *ngIf="!(alerts | async)">Loading ....</div>
+
+<table id="alerts-list">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <th>Service Name</th>
+            <th>Service Url</th>
+            <th>Date</th>
+            <th>Status Code</th>
+            <th>Message</th>
+            <th>Method</th>
+            <th>Has SSL</th>
+        </tr>
+    </tbody>
+
+    <tr *ngFor="let alert of alerts | async">
+        <td>{{alert.id}}</td>
+        <td>{{alert.service_name}}</td>
+        <td>{{alert.service_url}}</td>
+        <td>{{alert.date}}</td>
+        <td>{{alert.status_code}}</td>
+        <td>{{alert.msg}}</td>
+        <td>{{alert.method}}</td>
+        <td>{{alert.has_ssl}}</td>
+    </tr>
+</table>

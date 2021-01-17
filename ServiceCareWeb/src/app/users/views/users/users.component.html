@@ -1,1 +1,21 @@
-<p>users works!</p>
+<div *ngIf="!(users | async)">Loading ....</div>
+
+<table id="users-list">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <th>Photo</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+    </tbody>
+
+    <tr *ngFor="let user of users | async">
+        <td>{{user.id}}</td>
+        <td>{{user.photo}}</td>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>{{user.email}}</td>
+    </tr>
+</table>

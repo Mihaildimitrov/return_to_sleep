@@ -32,8 +32,6 @@ export class SigninComponent implements OnInit {
   get getFormFieldRef() { return this.signInForm.controls; }
 
   signInUser() {
-    console.log('tttttt');
-
     this.signInFormLoggingNow = true;
     this.signInFormIsDirty = true;
     this.signInFormWrogCredentials = false;

@@ -1,3 +1,5 @@
+import { IService } from './../models/service.model';
+import { environment } from './../../../environments/environment';
 import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,7 +12,7 @@ export class ServicesService {
 
   constructor(private http: HttpClient) { }
 
-  getAll() {
-    return this.http.get('http://localhost:4200/assets/data/services.json').pipe(map((response: any) => response['services']));
+  getAll(): Observable<IService[]> {
+    return this.http.get(environment.api_services).pipe(map((response: any) => response['services'] as IService[]));
   }
 }

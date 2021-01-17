@@ -1,0 +1,84 @@
+@import "./../../../../assets/styles/theme.scss";
+
+.not-found-container {
+  position: absolute;
+  height: calc(100vh - 60px);
+  width: 83%;
+  overflow: hidden;
+
+  &.section-container-fullscreen {
+    height: 100vh !important;
+    width: 100% !important;
+  }
+
+  .not-found-error {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-left: 2rem;
+
+    h1 {
+      font-weight: 400;
+      font-size: 8rem;
+      color: map-get($appColors, boulder);
+      position: relative;
+      left: 0%;
+      transition: all 0.5s;
+      margin: 0;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 24px;
+      letter-spacing: 5px;
+      color: map-get($appColors, boulder);
+      position: relative;
+      left: 0%;
+      transition: all 0.5s;
+      transition-delay: 0.5s;
+      -webkit-transition: all 0.5s;
+      -webkit-transition-delay: 0.5s;
+    }
+  }
+
+  .not-found-aura-1 {
+    position: absolute;
+    width: 300px;
+    height: 120%;
+    top: 25px;
+    right: -340px;
+    background-color: map-get($appColors, secondary);
+    box-shadow: 0px 0px 60px 10px rgba(map-get($appColors, secondary), 0.5);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    transform: rotate(20deg);
+    right: -170px;
+    animation-name: animation_view_state_1;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .not-found-aura-2 {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    right: -10%;
+    bottom: -301px;
+    background-color: map-get($appColors, secondary);
+    box-shadow: 0px 0px 60px 10px rgba(map-get($appColors, secondary), 0.5), 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    animation-name: animation_view_state_2;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform: rotate(-20deg);
+  }
+}

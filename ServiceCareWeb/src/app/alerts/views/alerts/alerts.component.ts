@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { AlertsService } from './../../services/alerts.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertsComponent implements OnInit {
 
-  constructor() { }
+  public alerts: Observable<any[]>;
+
+  constructor(private alertsService: AlertsService) {
+    this.alerts = this.alertsService.getAll();
+  }
 
   ngOnInit(): void {
   }
