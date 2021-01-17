@@ -23,7 +23,7 @@ class AuthController extends AbstractController
     }
 
     /**
-    * @Route("/auth/login", name="login", methods={"POST"})
+    * @Route("/auth/login", name="login", methods={"POST", "DELETE", "GET", "OPTIONS"})
     */
     public function login(Request $request, UserRepository $userRepository, UserPasswordEncoderInterface $encoder)
     {
