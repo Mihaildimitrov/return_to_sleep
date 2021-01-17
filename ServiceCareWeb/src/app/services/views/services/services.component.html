@@ -1,1 +1,5 @@
 <p>services works!</p>
+
+<div *ngIf="!(services | async)">Loading ....</div>
+
+<div *ngFor="let service of services | async">{{service.name}}</div>
