@@ -1,21 +1,17 @@
-<ng-container *ngIf="true">
-  <header>
-    <!-- <app-main-navigation></app-main-navigation> -->
-    TOP NAV
-  </header>
+<main>
+  <aside class="app-main-aside" *ngIf="(isAuthenticated$ | async)">
+    ASIDE NAV
+    <ul>
+      <li routerLink="/dashboard" routerLinkActive="active-menu-item">Dashboard</li>
+      <li routerLink="/services" routerLinkActive="active-menu-item">Services</li>
+      <li routerLink="/users" routerLinkActive="active-menu-item">Users</li>
+      <li routerLink="/alerts" routerLinkActive="active-menu-item">Alerts</li>
+    </ul>
+    <!-- <app-aside-navigation></app-aside-navigation> -->
+  </aside>
 
-  <main>
-    <aside class="app-main-aside">
-      ASIDE NAV
-      <!-- <app-aside-navigation></app-aside-navigation> -->
-    </aside>
-    <section class="app-main-section">
-      <router-outlet></router-outlet>
-    </section>
-  </main>
-</ng-container>
+  <section class="app-main-section" [ngClass]="{'section-container-fullscreen': !(isAuthenticated$ | async)}">
+    <router-outlet></router-outlet>
+  </section>
 
-
-<ng-container *ngIf="true">
-  <router-outlet></router-outlet>
-</ng-container>
+</main>

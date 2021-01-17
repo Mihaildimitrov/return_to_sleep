@@ -1,3 +1,4 @@
+import { AppGuard } from './core/services/app.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -7,17 +8,22 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
-    // canActivate: [AppGuard],
+    canActivate: [AppGuard],
   },
   {
     path: 'services',
     loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
-    // canActivate: [AppGuard],
+    canActivate: [AppGuard],
   },
   {
     path: 'users',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
-    // canActivate: [AppGuard],
+    canActivate: [AppGuard],
+  },
+  {
+    path: 'alerts',
+    loadChildren: () => import('./alerts/alerts.module').then(m => m.AlertsModule),
+    canActivate: [AppGuard],
   },
   {
     path: 'not-found',
