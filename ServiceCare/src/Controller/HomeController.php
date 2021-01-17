@@ -7,9 +7,32 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Entity\User;
 
 class HomeController extends AbstractController
 {
+      /**
+       * @Route("/register", name="_register")
+       */
+      public function createUserAction() {
+
+        $factory = $this->get('security.encoder_factory');
+    
+        $user = new User();
+    
+        $encoder = $factory->getEncoder($user);
+        $user->setSalt(md5(time()));
+        $pass = $encoder->encodePassword('admin', $user->getSalt());
+        $user->setEmail('admin@servicecare.com');
+        $user->setPassword($pass);
+        $user->setActive(1); //enable or disable
+    
+        $em = $this->getDoctrine()->getEntityManager();
+        $em->persist($user);
+        $em->flush();
+    
+        return new Response('Sucessful');
+    }
      /**
       * @Route("/", name="_home")
       */
