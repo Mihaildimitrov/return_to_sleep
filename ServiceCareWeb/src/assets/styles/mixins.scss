@@ -1,0 +1,198 @@
+@import "./theme.scss";
+
+@mixin modalTitleBar {
+  background-color: map-get($appColors, white);
+  border: none;
+  color: map-get($appColors, primary);
+  padding: 1.3rem 1rem 1rem 1rem;
+
+  .ui-dialog-title {
+    font-family: $appFont;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+    text-align: left;
+    color: map-get($appColors, primary);
+  }
+
+  a {
+    color: map-get($appColors, primary);
+  }
+}
+
+@mixin modalContent {
+  background-color: map-get($appColors, white);
+  border: none;
+  color: map-get($appColors, primary);
+  padding: 0.5rem 1rem 2rem 1rem;
+}
+
+@mixin modalFormFieldBox {
+  margin: 1.3rem 0 0 0;
+
+  &.buttons-box {
+    margin: 2rem 0 0 0;
+  }
+
+  &.buttons-new-employee {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      width: 49%;
+    }
+  }
+}
+
+@mixin modalFormLabel {
+  width: 100%;
+  font-family: $appFont;
+  font-size: 0.9rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-align: left;
+  color: map-get($appColors, gray);
+
+  &:focus-within {
+    color: map-get($appColors, primary);
+  }
+}
+
+@mixin modalFormInput {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 2px;
+  border: solid 0.5px map-get($appColors, gallery);
+  background-color: map-get($appColors, gallery);
+  margin: 0.5rem 0 0 0;
+  font-family: $appFont;
+  font-size: 0.9rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-align: left;
+  color: map-get($appColors, boulder);
+  padding: 0.5rem;
+
+  &:focus {
+    outline: map-get($appColors, boulder) auto 5px;
+  }
+
+  &.active-input-field {
+    border: solid 0.5px map-get($appColors, gray);
+    background-color: map-get($appColors, white);
+    color: map-get($appColors, gray);
+
+    &:focus {
+      border: solid 0.5px map-get($appColors, mine-shaft);
+      outline: none;
+      color: map-get($appColors, primary);
+    }
+  }
+}
+
+@mixin modalFormButton {
+  width: 100%;
+  height: 3rem;
+  border-radius: 2px;
+  background-color: map-get($appColors, gray);
+  font-family: $appFont;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: center;
+  color: map-get($appColors, white);
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.active-color {
+    background-color: map-get($appColors, secondary);
+  }
+
+  span {
+    vertical-align: middle;
+  }
+}
+
+@mixin modalFormImageUploadBox {
+  text-align: center;
+  position: relative;
+  overflow: visible;
+
+  img {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: auto 0.5rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  button,
+  label {
+    min-width: 7rem;
+    min-height: 1.8rem;
+    border-radius: 2px;
+    border: solid 0.5px map-get($appColors, secondary);
+    font-family: $appFont;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: center;
+    color: map-get($appColors, secondary);
+    display: inline-block;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  span.loading-process-spinner {
+    vertical-align: middle;
+    position: absolute;
+    display: inline-block;
+    bottom: 2.2rem;
+    color: map-get($appColors, secondary);
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
+
+@mixin card {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 1.5px 3px 0 rgba(map-get($appColors, black), 16%);
+  background-color: map-get($appColors, white);
+  padding: 0.6rem;
+  margin: 1rem auto;
+}
