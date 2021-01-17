@@ -19,6 +19,9 @@ main {
   }
 
   section {
+    &.section-container-fullscreen {
+      width: 100%;
+    }
     &.app-main-section {
       overflow: scroll;
       height: calc(100vh - 60px);
