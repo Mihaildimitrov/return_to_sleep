@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { authRoutes } from './authentication.routing';
 import { SigninComponent } from './views/signin/signin.component';
 import { SignupComponent } from './views/signup/signup.component';
+import { SharedModule } from 'primeng/api';
+
 
 
 
@@ -12,6 +14,7 @@ import { SignupComponent } from './views/signup/signup.component';
   imports: [
     CommonModule,
     RouterModule.forChild(authRoutes),
+    SharedModule
   ]
 })
 export class AuthenticationModule { }
