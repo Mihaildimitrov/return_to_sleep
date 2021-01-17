@@ -1,8 +1,35 @@
 <div class="loginBox">
     <p>Sign in to your account!</p>
+    <br style="clear:both;" />
+    <form name="message" method="post">
+        <section>
 
-    <button (click)="signin()" >Sign in</button>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="text" value="" name="email">
+            </div>
+            <br style="clear:both;" />
+            <div>
+                <label for="password">Password</label>
+                <input id="password" type="password" value="" name="name">
+            </div>
 
-    <button (click)="fakesignin()" >Fake Sign in</button>
+            <br style="clear:both;" />
+            <div class="btn-container">
+                <button class="btn" (click)="signin()">Sign in</button>
+                <!-- <button (click)="signout()">Sign Out</button> -->
+            </div>
+            <br style="clear:both;" />
+            <div class="link-container">
+                <a href="#">Forget your password?</a>
+                <br style="clear:both;" />
+                <a href="#">Don't have an account? Sign up.</a>
+            </div>
+        </section>
+    </form>
+
+    <button (click)="signin()">Sign in</button>
+
+    <button (click)="fakesignin()">Fake Sign in</button>
 
 </div>
