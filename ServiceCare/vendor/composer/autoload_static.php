@@ -126,6 +126,10 @@ class ComposerStaticInitf1122f432ad39321876f02a8ec81a404
             'Laminas\\EventManager\\' => 21,
             'Laminas\\Code\\' => 13,
         ),
+        'F' => 
+        array (
+            'Firebase\\JWT\\' => 13,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -485,6 +489,10 @@ class ComposerStaticInitf1122f432ad39321876f02a8ec81a404
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
         ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -559,7 +567,15 @@ class ComposerStaticInitf1122f432ad39321876f02a8ec81a404
 
     public static $classMap = array (
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
+        'App\\Entity\\Alert' => __DIR__ . '/../..' . '/src/Entity/Alert.php',
+        'App\\Entity\\Service' => __DIR__ . '/../..' . '/src/Entity/Service.php',
+        'App\\Entity\\ServiceStatus' => __DIR__ . '/../..' . '/src/Entity/ServiceStatus.php',
+        'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\AlertRepository' => __DIR__ . '/../..' . '/src/Repository/AlertRepository.php',
+        'App\\Repository\\ServiceRepository' => __DIR__ . '/../..' . '/src/Repository/ServiceRepository.php',
+        'App\\Repository\\ServiceStatusRepository' => __DIR__ . '/../..' . '/src/Repository/ServiceStatusRepository.php',
+        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\CreateDatabaseDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/CreateDatabaseDoctrineCommand.php',
@@ -1689,6 +1705,11 @@ class ComposerStaticInitf1122f432ad39321876f02a8ec81a404
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/Warning.php',
+        'Firebase\\JWT\\BeforeValidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/BeforeValidException.php',
+        'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
+        'Firebase\\JWT\\JWK' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWK.php',
+        'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
+        'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
         'IntlDateFormatter' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/IntlDateFormatter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Laminas\\Code\\DeclareStatement' => __DIR__ . '/..' . '/laminas/laminas-code/src/DeclareStatement.php',
