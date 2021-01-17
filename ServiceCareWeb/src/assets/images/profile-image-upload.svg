@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="97.788" height="97.788" viewBox="0 0 97.788 97.788">
+    <defs>
+        <clipPath id="prefix__clip-path">
+            <path id="prefix__Pfad_1297" d="M0 0h97.788v97.788H0z" data-name="Pfad 1297" transform="translate(-2.144 -2.144)" style="fill:none"/>
+        </clipPath>
+        <clipPath id="prefix__clip-path-2">
+            <path id="prefix__Rechteck_3470" d="M0 0h93.5v93.5H0z" class="prefix__cls-2" data-name="Rechteck 3470"/>
+        </clipPath>
+        <style>
+            .prefix__cls-2{fill:#8d8d8d}
+        </style>
+    </defs>
+    <g id="prefix__profile" transform="translate(2.144 2.144)">
+        <g id="prefix__profile-2" data-name="profile">
+            <g id="prefix__profile-3" data-name="profile">
+                <path id="prefix__Pfad_1637" d="M46.75 0A46.75 46.75 0 1093.5 46.75 46.75 46.75 0 0046.75 0zM5.844 46.75a40.906 40.906 0 1171.788 26.737 26.1 26.1 0 00-22.116-12.128H37.984a26.3 26.3 0 00-22.116 12.124A40.7 40.7 0 015.844 46.75zm14.29 31a20.453 20.453 0 0117.85-10.55h17.532A20.453 20.453 0 0173.37 77.722a40.672 40.672 0 01-53.237 0z" class="prefix__cls-2" data-name="Pfad 1637"/>
+                <path id="prefix__Pfad_1638" d="M26.117 42.484A18.992 18.992 0 107.125 23.492a18.992 18.992 0 0018.992 18.992zm0-32.141a13.148 13.148 0 11-13.148 13.149 13.148 13.148 0 0113.148-13.148z" class="prefix__cls-2" data-name="Pfad 1638" transform="translate(20.633 13.031)"/>
+            </g>
+        </g>
+    </g>
+</svg>

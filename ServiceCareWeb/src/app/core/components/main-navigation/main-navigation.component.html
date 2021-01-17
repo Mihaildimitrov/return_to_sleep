@@ -1,1 +1,25 @@
-<p>main-navigation works!</p>
+<div class="main-navigation-container p-grid p-ai-center vertical-container">
+    <div class="mobile-menu-container p-col p-d-flex p-ai-center">
+        <button (click)="mobileMenu = true"><i class="pi pi-bars"></i></button>
+
+        <p-sidebar [(visible)]="mobileMenu" [style]="{width: '70%'}">
+            <app-aside-navigation (onSelected)="mobileMenu = false"></app-aside-navigation>
+        </p-sidebar>
+    </div>
+
+    <div class="logo-box p-col p-d-flex p-ai-center">
+        <img src="../../../../assets/images/logo.svg" alt="">
+        <h1 class="sc-logo-txt">ServiceCare</h1>
+    </div>
+
+    <div class="user-box p-col p-d-flex p-jc-end p-ai-center">
+        <div (click)="openProfile()" class="user-profile">
+            <i class="pi pi-user"></i>
+            <span>Profile</span>
+        </div>
+        <div (click)="logout()" class="user-logout">
+            <i class="pi pi-sign-out"></i>
+            <span>Logout</span>
+        </div>
+    </div>
+</div>

@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavigationComponent implements OnInit {
 
+  public mobileMenu: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public openProfile() {
+
+  }
+  
+  public logout() {
+
   }
 
 }

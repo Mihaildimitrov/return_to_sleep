@@ -1,0 +1,179 @@
+@import "./../../../../assets/styles/theme.scss";
+@import "./../../../../assets/styles/mixins.scss";
+
+::ng-deep {
+  #app-modal-container {
+    .app-modal-mask.ui-dialog-mask {}
+
+    .app-modal {
+      width: 25rem;
+
+      .ui-dialog-titlebar {
+        @include modalTitleBar;
+      }
+
+      .ui-dialog-content {
+        @include modalContent;
+
+        .profile-form {
+          .field-box {
+            @include modalFormFieldBox;
+
+            label {
+              @include modalFormLabel;
+            }
+
+            input {
+              @include modalFormInput;
+            }
+
+            .button-form {
+              @include modalFormButton;
+            }
+          }
+
+          .img-upload-box {
+            @include modalFormImageUploadBox;
+          }
+
+          .custom-file-upload {
+            .input-file-icon {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .app-modal {
+        width: 90% !important;
+      }
+
+      .custom-file-upload {
+        min-width: auto !important;
+
+        .input-file-txt {
+          display: none;
+        }
+
+        .input-file-icon {
+          display: block !important;
+        }
+      }
+    }
+
+  }
+
+  .mobile-menu {
+    z-index: 9999 !important;
+  }
+}
+
+.mobile-menu {
+  z-index: 9999 !important;
+}
+
+.main-navigation-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 1.5px 3px 0 rgba(map-get($appColors, backgroundSecondary), 16%);
+  background-color: map-get($appColors, backgroundSecondary);
+  z-index: 9998;
+  margin: 0;
+  color: map-get($appColors, colorSecondary);
+
+  .logo-box {
+    padding-left: 1.25rem;
+
+    img,
+    h1 {
+      vertical-align: middle;
+      margin: 0;
+    }
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.75rem;
+    }
+  }
+
+  .user-box {
+    padding-right: 2.7rem;
+
+    img,
+    span,
+    i {
+      vertical-align: middle;
+    }
+
+    img,
+    i {
+    //   width: 1.5rem;
+    //   height: 1.5rem;
+      margin-right: 0.7rem;
+    }
+
+    span {
+      font-family: $appFont;
+      font-size: 0.9rem;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.14;
+      letter-spacing: normal;
+      text-align: left;
+      color: map-get($appColors, colorSecondary);
+    }
+
+    .user-profile,
+    .user-logout {
+      cursor: pointer;
+    }
+
+    .user-profile {
+      margin-right: 2.6rem;
+    }
+  }
+
+  .mobile-menu-container {
+    display: none !important;
+
+    button {
+      background: transparent;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .user-box {
+    padding: .5rem;
+    padding-right: 0.5rem !important;
+  }
+
+  .user-profile {
+    font-size: 0.5rem;
+    margin-right: 0 !important;
+
+    span {
+      display: none;
+    }
+  }
+
+  .user-logout {
+    font-size: 0.5rem;
+
+    span {
+      display: none;
+    }
+  }
+
+  .main-navigation-container .mobile-menu-container {
+    display: block !important;
+  }
+}

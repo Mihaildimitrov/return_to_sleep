@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/theme.scss";
+
+html {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: $appFont;
+    background-color: map-get($appColors, alabaster);
+    min-height: 100vh;
+    *:focus {
+      outline: none;
+  }
+  }
+}
+
+.sc-logo-txt {
+    font-family: $appFont;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: map-get($appColors, colorSecondary);
+  }
