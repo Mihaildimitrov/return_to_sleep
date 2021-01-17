@@ -1,1 +1,8 @@
-<p>not-found works!</p>
+<div class="not-found-container" [ngClass]="{'section-container-fullscreen': !(isAuthenticated$ | async)}">
+    <div class="not-found-error">
+        <h1>Oops</h1>
+        <p>The Page you're looking for isn't here.</p>
+    </div>
+    <div class="not-found-aura-1"></div>
+    <div class="not-found-aura-2"></div>
+</div>

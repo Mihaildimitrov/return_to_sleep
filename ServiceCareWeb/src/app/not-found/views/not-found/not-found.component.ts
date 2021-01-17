@@ -1,3 +1,5 @@
+import { AuthenticationService } from './../../../core/services/authentication.service';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+  public isAuthenticated$: Observable<boolean>;
+
+  constructor(private authenticationService: AuthenticationService) {
+    this.isAuthenticated$ = this.authenticationService.isAuthenticated$;
+  }
 
   ngOnInit(): void {
   }

@@ -6,26 +6,82 @@ html {
   padding: 0;
   margin: 0;
   font-size: 16px;
+
   body {
     padding: 0;
     margin: 0;
     font-family: $appFont;
     background-color: map-get($appColors, alabaster);
     min-height: 100vh;
+
     *:focus {
       outline: none;
-  }
+    }
   }
 }
 
 .sc-logo-txt {
-    font-family: $appFont;
-    font-size: 1.4rem;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.25;
-    letter-spacing: normal;
-    text-align: left;
-    color: map-get($appColors, colorSecondary);
+  font-family: $appFont;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: map-get($appColors, colorSecondary);
+}
+
+// <<<----------------------------------------------------------
+// ANIMATIONS
+// ---------------------------------------------------------->>>
+
+@-webkit-keyframes animation_view_state_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
   }
+
+  to {
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+  }
+}
+
+@-o-keyframes animation_view_state_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+
+  to {
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+  }
+
+}
+
+@-moz-keyframes animation_view_state_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+
+  to {
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+  }
+
+}
+
+@keyframes animation_view_state_1 {
+  from {
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+
+  to {
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+  }
+}
