@@ -1,3 +1,4 @@
+import { ServicesService } from './../../../services/services/services.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private servicesService: ServicesService) { }
 
   ngOnInit(): void {
+    this.servicesService.getAll().subscribe((responce) => {
+      console.log(responce);
+    });
+
   }
 
 }
