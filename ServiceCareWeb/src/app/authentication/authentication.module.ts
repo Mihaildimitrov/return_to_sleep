@@ -5,6 +5,7 @@ import { authRoutes } from './authentication.routing';
 import { SigninComponent } from './views/signin/signin.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { SharedModule } from 'primeng/api';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { SharedModule } from 'primeng/api';
   imports: [
     CommonModule,
     RouterModule.forChild(authRoutes),
+    ReactiveFormsModule,
     SharedModule
   ]
 })

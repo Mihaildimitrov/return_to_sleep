@@ -1,5 +1,33 @@
-<p>services works!</p>
-
 <div *ngIf="!(services | async)">Loading ....</div>
 
-<div *ngFor="let service of services | async">{{service.name}}</div>
+<table id="services-list">
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Date</th>
+      <th>Last status code</th>
+      <th>Last status message</th>
+      <th>Method</th>
+      <th>SSL</th>
+      <th>Success %</th>
+      <th>Success requests</th>
+      <th>Failed requests</th>
+    </tr>
+    <tr>
+    </tr>
+  </tbody>
+
+  <tr *ngFor="let service of services | async">
+      <td>{{service.name}}</td>
+      <td><a href="{{service.url}}" target="_blank">{{service.url}}</a></td>
+      <td>{{service.date_created}}</td>
+      <td [ngClass]="(service.last_status_code === 200) ?'green':'red'">{{service.last_status_code}}</td>
+      <td [ngClass]="(service.last_status_code === 200) ?'green':'red'">{{service.last_status_message}}</td>
+      <td>{{service.method}}</td>
+      <td>{{service.has_ssl}}</td>
+      <td>{{service.success_percentage}}</td>
+      <td>{{service.success_requests}}</td>
+      <td>{{service.failed_requests}}</td>
+  </tr>
+</table>

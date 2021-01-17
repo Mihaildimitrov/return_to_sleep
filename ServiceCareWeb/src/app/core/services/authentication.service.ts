@@ -17,14 +17,12 @@ export class AuthenticationService {
     this.isAuthenticatedSubject$.next(true);
   }
 
-  public signin(credentials: any) {
+  public signin(email: string, password: string) {
 
-    let cred = {
-      email: "admin@servicecare.com",
-      password: "admin"
-    };
-
-    return this.http.post('http://www.sc.nsgcreative.com/auth/login', cred).pipe(map((response: any) => {
+    return this.http.post('http://www.sc.nsgcreative.com/auth/login', {
+      email: email,
+      password: password
+    }).pipe(map((response: any) => {
       console.log('LOGIN => ', response);
       this.isAuthenticatedSubject$.next(true);
       return response;
