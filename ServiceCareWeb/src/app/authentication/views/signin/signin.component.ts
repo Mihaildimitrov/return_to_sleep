@@ -18,8 +18,10 @@ export class SigninComponent implements OnInit {
   }
 
   public signin() {
-    this.authenticationService.signin();
-    this.router.navigate(['dashboard']);
+    this.authenticationService.signin({}).subscribe(res => {
+      console.log('1 => ', res);
+      this.router.navigate(['dashboard']);
+    });
   }
 
   public signout() {
