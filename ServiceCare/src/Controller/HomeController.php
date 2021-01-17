@@ -11,28 +11,7 @@ use App\Entity\User;
 
 class HomeController extends AbstractController
 {
-      /**
-       * @Route("/register", name="_register")
-       */
-      public function createUserAction() {
 
-        $factory = $this->get('security.encoder_factory');
-    
-        $user = new User();
-    
-        $encoder = $factory->getEncoder($user);
-        $user->setSalt(md5(time()));
-        $pass = $encoder->encodePassword('admin', $user->getSalt());
-        $user->setEmail('admin@servicecare.com');
-        $user->setPassword($pass);
-        $user->setActive(1); //enable or disable
-    
-        $em = $this->getDoctrine()->getEntityManager();
-        $em->persist($user);
-        $em->flush();
-    
-        return new Response('Sucessful');
-    }
      /**
       * @Route("/", name="_home")
       */
@@ -60,5 +39,34 @@ class HomeController extends AbstractController
         
         return new JsonResponse(['response'=>'HTTP code: ' . $httpcode, 'error'=> null]);
       }
+
+       /**
+      * @Route("/register", name="_register")
+      */
+      public function Register(Request $request)
+      {
+        
+        $url = $request->get('url', null);
+
+        if(!$url || !is_string($url) || ! preg_match('/^http(s)?:\/\/[a-z0-9-]+(.[a-z0-9-]+)*(:[0-9]+)?(\/.*)?$/i', $url)){
+          return new JsonResponse(['response' => null, 'error'=> 'URL not valid']);
+        }
+
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
+        curl_setopt($ch, CURLOPT_NOBODY, true);    // we don't need body
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_TIMEOUT,10);
+        $output = curl_exec($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        $em = $this->getDoctrine()->getManager();
+        //$portfolio = $em->getRepository(PortfolioSettings::class)->findAll();
+
+        
+        return new JsonResponse(['response'=>'HTTP code: ' . $httpcode, 'error'=> null]);
+      }
+
 
 }
