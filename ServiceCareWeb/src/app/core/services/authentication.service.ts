@@ -13,6 +13,9 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
+  public fakesignin() {
+    this.isAuthenticatedSubject$.next(true);
+  }
 
   public signin(credentials: any) {
 

@@ -17,6 +17,11 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public fakesignin() {
+    this.authenticationService.fakesignin();
+    this.router.navigate(['dashboard']);
+  }
+
   public signin() {
     this.authenticationService.signin({}).subscribe(res => {
       console.log('1 => ', res);
