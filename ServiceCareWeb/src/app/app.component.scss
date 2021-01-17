@@ -19,10 +19,15 @@ main {
   }
 
   section {
+    &.section-container-fullscreen {
+      width: 100% !important;
+      height: 100vh !important;
+    }
     &.app-main-section {
       overflow: scroll;
       height: calc(100vh - 60px);
       width: 83%;
+      padding: 1rem;
     }
   }
 }
