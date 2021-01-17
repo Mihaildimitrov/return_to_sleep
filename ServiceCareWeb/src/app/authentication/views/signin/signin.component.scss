@@ -1,4 +1,119 @@
-* {
+@import "./../../../../assets/styles/theme.scss";
+
+.sign-in-container {
+  background: map-get($appColors, backgroundSecondary);
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  width: 100%;
+  top: initial;
+  left: initial;
+  justify-content: center;
+  flex-direction: column;
+
+  .sign-in-form-container {
+    text-align: center;
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    background: #fff;
+
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
     margin: 0;
-    padding: 0;
+    top: initial;
+    left: initial;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    form {
+      padding: 10px 0;
+      width: 100%;
+
+      label {
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-align: left;
+        display: block;
+        padding: 10px 0;
+      }
+
+      input,
+      textarea,
+      select {
+        display: block;
+        width: 100%;
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        margin-top: 5px;
+      }
+
+      .alert {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+        margin-bottom: 0rem;
+      }
+
+      button {
+        width: 60%;
+        font-size: 1rem;
+        margin: 10px 0;
+        background: map-get($appColors, secondary);
+        color: #fff;
+        padding: 0.2rem;
+        border: none;
+        border-radius: 0.3em;
+
+        &:disabled {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .forgotten-password-container {
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.sign-in-form-loading {
+  padding: 10px;
+
+  small {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+
+  mat-spinner {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.sign-in-form-loading ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #1d2531;
 }

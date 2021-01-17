@@ -1,8 +1,52 @@
-<div class="loginBox">
-    <p>Sign in to your account!</p>
+<div class="sign-in-container">
+    <div class="sign-in-form-container">
 
-    <button (click)="signin()" >Sign in</button>
+        <h1>Sign in to uour account</h1>
 
-    <button (click)="fakesignin()" >Fake Sign in</button>
+        <form [formGroup]="signInForm">
 
+            <label>Email:
+                <input class="form-control" #email required type="email" formControlName="email">
+            </label>
+            <div *ngIf="getFormFieldRef.email.invalid && (getFormFieldRef.email.dirty || getFormFieldRef.email.touched || signInFormIsDirty)"
+                class="alert alert-danger">
+                <div *ngIf="email.value === '' && getFormFieldRef.email.errors.required">
+                    Email is required.
+                </div>
+                <div *ngIf="email.value !== '' && getFormFieldRef.email.errors.email">
+                    Email is wrong.
+                </div>
+            </div>
+
+            <label>Password:
+                <input class="form-control" required type="password" formControlName="password">
+            </label>
+            <div *ngIf="getFormFieldRef.password.invalid && (getFormFieldRef.password.dirty || getFormFieldRef.password.touched || signInFormIsDirty)"
+                class="alert alert-danger">
+                <div *ngIf="getFormFieldRef.password.errors.required">
+                    Password is required.
+                </div>
+            </div>
+
+            <button
+                [disabled]="getFormFieldRef.email.value === '' || getFormFieldRef.password.value === '' || getFormFieldRef.email.errors || signInFormLoggingNow ? 'disabled': ''"
+                class="button" (click)="signInUser()">Sign In</button>
+
+                <button (click)="fakesignin()" >Fake Sign in</button>
+
+            <div class="sign-in-form-loading" *ngIf="signInFormLoggingNow">
+                <mat-spinner [diameter]="30"></mat-spinner>
+            </div>
+
+            <div *ngIf="signInFormWrogCredentials" class="alert alert-danger">
+                Invalid email or password!
+            </div>
+
+        </form>
+
+        <!-- <div (click)="registerUser()" class="forgotten-password-container">
+            <small>Don't have an account? Sign up here</small>
+        </div> -->
+
+    </div>
 </div>

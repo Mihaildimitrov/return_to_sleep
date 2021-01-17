@@ -1,4 +1,6 @@
+import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-navigation',
@@ -9,7 +11,10 @@ export class MainNavigationComponent implements OnInit {
 
   public mobileMenu: boolean = false;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -17,9 +22,10 @@ export class MainNavigationComponent implements OnInit {
   public openProfile() {
 
   }
-  
-  public logout() {
 
+  public logout() {
+    this.authenticationService.signout();
+    this.router.navigate(['signin']);
   }
 
 }
