@@ -1,3 +1,4 @@
+import { IService } from './../../models/service.model';
 import { Observable } from 'rxjs';
 import { ServicesService } from './../../../services/services/services.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  public services: Observable<any[]>;
+  public services: Observable<IService[]>;
 
   constructor(private servicesService: ServicesService) {
     this.services = this.servicesService.getAll();
