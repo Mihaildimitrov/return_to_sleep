@@ -28,11 +28,11 @@
                 </div>
             </div>
 
-            <button
+            <!-- <button
                 [disabled]="getFormFieldRef.email.value === '' || getFormFieldRef.password.value === '' || getFormFieldRef.email.errors || signInFormLoggingNow ? 'disabled': ''"
-                class="button" (click)="signInUser()">Sign In</button>
+                class="button" (click)="signInUser()">Sign In</button> -->
 
-                <button (click)="fakesignin()" >Fake Sign in</button>
+                <button (click)="fakesignin()" >Sign in</button>
 
             <div class="sign-in-form-loading" *ngIf="signInFormLoggingNow">
                 <mat-spinner [diameter]="30"></mat-spinner>
