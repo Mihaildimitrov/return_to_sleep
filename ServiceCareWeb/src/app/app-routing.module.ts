@@ -4,12 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
-    canActivate: [AppGuard],
-  },
+  { path: '', pathMatch: 'full', redirectTo: 'services' },
+  { path: 'dashboard', redirectTo: 'services' },
+  // {
+  //   path: 'dashboard',
+  //   loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+  //   canActivate: [AppGuard],
+  // },
   {
     path: 'services',
     loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
