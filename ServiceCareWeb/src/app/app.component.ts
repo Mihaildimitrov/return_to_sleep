@@ -1,3 +1,5 @@
+import { AuthenticationService } from './core/services/authentication.service';
+import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ServiceCareWeb';
+
+  public isAuthenticated$: Observable<boolean>;
+
+  constructor(private authenticationService: AuthenticationService) {
+    this.isAuthenticated$ = this.authenticationService.isAuthenticated$;
+  }
+
 }
