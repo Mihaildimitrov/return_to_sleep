@@ -1,0 +1,43 @@
+@import "./../../../../assets/styles/theme.scss";
+
+.aside-navigation-container {
+  background-color: map-get($appColors, backgroundSecondary);
+  color: map-get($appColors, colorSecondary);
+  height: 100%;
+
+  ul {
+    margin: 0;
+    padding: 3rem 0.625rem 0.625rem 0.625rem;
+
+
+    li {
+      list-style-type: none;
+      font-family: $appFont;
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.21;
+      letter-spacing: normal;
+      text-align: left;
+      color: map-get($appColors, primary);
+      margin: 0 auto 1rem auto;
+      padding: 0.625rem 1.4rem 0.625rem 1.4rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 1rem;
+
+      &:hover {
+        color: map-get($appColors, secondary);
+      }
+
+      &.active-menu-item {
+        color: map-get($appColors, secondary);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
